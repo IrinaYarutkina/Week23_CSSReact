@@ -6,6 +6,11 @@
 }
 
 .tariffCard {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;     
+    text-align: center; 
     border: 1px solid #ffffff;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -16,8 +21,9 @@
 
 .activeCard {
     transform: scale(1.1) translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     z-index: 1;
+    border: 2px solid #ffc5c5;
 }
 
 .tariffTitle {

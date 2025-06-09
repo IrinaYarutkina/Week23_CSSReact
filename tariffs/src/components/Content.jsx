@@ -1,8 +1,18 @@
+import React, { useState } from 'react';
 import {tariffsArrow} from '../Data';
 import TariffCard from './TariffCard';
 import styles from './Content.module.css'
 
 function GetTariffs(props) {
+const [activeIndex, setActiveIndex] = useState(null);
+const handleCardClick = (index) => {
+    if (activeIndex === index) {
+        setActiveIndex(null); 
+    } else {
+        setActiveIndex(index); 
+    }
+};
+
     return(
         <div className={styles.cardContainer}>
             {tariffsArrow.map((tariff, index) => (
@@ -14,7 +24,8 @@ function GetTariffs(props) {
                 info={tariff.info}
                 color={tariff.color}
                 textColor={tariff.textColor}
-                active={tariff.active}
+                active={index === activeIndex}
+                onClick={() => handleCardClick(index)}
                 />
         ))}
         </div>
